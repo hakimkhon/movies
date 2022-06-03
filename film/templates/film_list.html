@@ -1,0 +1,11 @@
+<h1>Barcha filmlar ro'yxati</h1>
+
+{% for film in object_list %}
+    <ul>
+        <li>Title : {{film.title}}</li>
+        <li>Rejisor : {{film.rejisor}}</li>
+        <li>Kino turi : {{film.type_film}}</li>
+        <li>Kino haqida qisqacha : {{film.about_film}}</li>
+        <li>Aloqa o'rnatish uchun pochta : {{film.pochta}}</li>
+    </ul>
+{% endfor %}
