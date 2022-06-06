@@ -5,4 +5,4 @@ from .models import Film
 
 class FilmListView(ListView):
     model = Film
-    template_name = "film_list.html" 
+    template_name = "film_app/film_list.html" 
