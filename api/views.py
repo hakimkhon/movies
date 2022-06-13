@@ -1,10 +1,11 @@
-import imp
-from django.shortcuts import render
-from rest_framework.generics import ListAPIView
+from rest_framework.generics import ListAPIView, RetrieveAPIView
 from film.models import Film
-from .serializer import FilmSerializer
+from .serializers import FilmSerializer
 
-
-class FilmAPIView(ListAPIView):
+class ListFilm(ListAPIView):
     queryset = Film.objects.all()
-    serializer_class = FilmSerializer 
+    serializer_class = FilmSerializer
+
+class DetailFilm(RetrieveAPIView):
+    queryset = Film.objects.all()
+    serializer_class = FilmSerializer

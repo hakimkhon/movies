@@ -1,5 +1,6 @@
 from django.urls import path
-from .views import FilmAPIView
+from .views import ListFilm, DetailFilm
 urlpatterns = [
-    path('', FilmAPIView.as_view())
+    path('', ListFilm.as_view()),
+    path('<int:pk>/', DetailFilm.as_view()),
 ]
