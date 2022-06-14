@@ -1,6 +1,6 @@
-from rest_framework.generics import ListAPIView, RetrieveAPIView
 from film.models import Film
 from .serializers import FilmSerializer
+from rest_framework.generics import ListAPIView, RetrieveAPIView
 
 class ListFilm(ListAPIView):
     queryset = Film.objects.all()
