@@ -30,13 +30,18 @@ INSTALLED_APPS = [
     'rest_framework',
 
     # local apps
-    'film',
-    'api',    
-    
-    # 'film.apps.FilmConfig',
-    # 'api.apps.ApiConfig',
+    'film.apps.FilmConfig',
+    'api.apps.ApiConfig',
+
+    #...
+    'corsheaders',
 ]
 
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES':[
+        'rest_framework.permissions.AllowAny'
+    ]
+}
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -48,9 +53,10 @@ MIDDLEWARE = [
 ]
 
 CORS_ORIGIN_WHITELIST = (
-    'http://localhost:8000',
+    'http://127.0.0.1:8000',
     'http://localhost:3000',
 )
+
 ROOT_URLCONF = 'core.urls'
 
 TEMPLATES = [
